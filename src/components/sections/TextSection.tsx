@@ -1,5 +1,8 @@
+import Image from "next/image"
+
 interface Props {
 	image?: string
+	alt?: string
 
 	title?: string
 	detail?: string
@@ -22,7 +25,12 @@ function TextSection(props: Props) {
 
 				<div className={`mx-auto w-full ${props.large ? "lg:width-lg" : "md:width-md"}`}>
 
-					<img src={props.image} alt='Section thumbnail' className="w-full aspect-landscape border" />
+					<Image
+						src={props.image}
+						width={1200}
+						height={500}
+						alt={props.alt ?? "-"}
+					/>
 				</div>
 			}
 

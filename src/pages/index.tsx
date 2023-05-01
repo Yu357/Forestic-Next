@@ -14,6 +14,7 @@ export default function Home() {
 
 				<TextSection
 					image="/images/headers/development.png"
+					alt="パソコン"
 					large
 					title="つくってみたいものをつくる"
 					detail={`専門学校に入学してからそろそろ3年。自分が作ってみたいものを自由に作って暮らしていたら、いつの間にかたくさんの作品ができていました。\nせっかくなので、今まで趣味で作ってきた作品をまとめてみました。ぜひご覧ください!`}
