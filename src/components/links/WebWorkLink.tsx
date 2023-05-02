@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 interface Props {
@@ -15,7 +16,13 @@ function WebWorkLink(props: Props) {
 
 				<Link href={props.to} className="transition hover:brightness-95">
 
-					<img src={props.image} alt={props.title} className="w-full border hover:border-gray-100" />
+					<Image
+						src={props.image}
+						alt={props.title}
+						width={800}
+						height={500}
+						className="w-full border hover:border-gray-100"
+					/>
 				</Link>
 			</div>
 
