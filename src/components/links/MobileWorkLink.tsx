@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface Props {
 	title: string
@@ -17,7 +18,13 @@ function MobileWorkLink(props: Props) {
 
 					<Link key={index} href={props.to} className="transition hover:brightness-95">
 
-						<img src={image} alt={props.title} className="w-full border border-gray-300 hover:border-gray-200 rounded-lg" />
+						<Image
+							src={image}
+							alt={props.title}
+							width={600}
+							height={1300}
+							className="w-full border border-gray-300 hover:border-gray-200 rounded-lg"
+						/>
 					</Link>
 				))}
 			</div>
