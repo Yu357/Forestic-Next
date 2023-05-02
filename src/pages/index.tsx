@@ -4,8 +4,6 @@ import TextSection from "@/components/sections/TextSection"
 import Head from "next/head"
 import fs from 'fs'
 import matter from 'gray-matter'
-import Link from "next/link"
-import Image from "next/image"
 
 export const getStaticProps = () => {
 
