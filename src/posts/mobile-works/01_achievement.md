@@ -1,6 +1,6 @@
 ---
 name: 'Achievement'
-thumbnail: '/images/thumbnails/'
+thumbnail: ['/images/thumbnails/achievement00', '/images/thumbnails/achievement01', '/images/thumbnails/achievement02']
 headerImage: '/images/headers/achievement.png'
 ---
 
