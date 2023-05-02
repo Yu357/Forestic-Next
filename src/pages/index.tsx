@@ -10,7 +10,7 @@ import Image from "next/image"
 export const getStaticProps = () => {
 
 	// posts内のファイルをすべて取得
-	const files = fs.readdirSync('src/posts')
+	const files = fs.readdirSync('src/posts/web-works')
 
 	// ファイルの内容を取得
 	const posts = files.map((fileName) => {
@@ -19,7 +19,7 @@ export const getStaticProps = () => {
 		const fileSlug = fileName.replace(/\.md$/, '')
 
 		// ファイルの内容
-		const fileContent = fs.readFileSync(`src/posts/${fileName}`, 'utf-8')
+		const fileContent = fs.readFileSync(`src/posts/web-works/${fileName}`, 'utf-8')
 
 		// ファイルのFront MatterとContentを分離
 		const { data, content } = matter(fileContent)
