@@ -2,8 +2,42 @@ import WebWorkLink from "@/components/links/WebWorkLink"
 import GallerySection from "@/components/sections/GallerySection"
 import TextSection from "@/components/sections/TextSection"
 import Head from "next/head"
+import fs from 'fs'
+import matter from 'gray-matter'
+import Link from "next/link"
+import Image from "next/image"
 
-export default function Home() {
+export const getStaticProps = () => {
+
+	// posts内のファイルをすべて取得
+	const files = fs.readdirSync('src/posts')
+
+	// ファイルの内容を取得
+	const posts = files.map((fileName) => {
+
+		// ファイル名
+		const fileSlug = fileName.replace(/\.md$/, '')
+
+		// ファイルの内容
+		const fileContent = fs.readFileSync(`src/posts/${fileName}`, 'utf-8')
+
+		// ファイルのFront MatterとContentを分離
+		const { data, content } = matter(fileContent)
+
+		return {
+			frontMatter: data,
+			fileSlug,
+		}
+	})
+
+	return {
+		props: {
+			posts,
+		},
+	}
+}
+
+export default function Home({ posts }: any) {
 	return (
 
 		<>
@@ -25,7 +59,17 @@ export default function Home() {
 
 				<GallerySection title="Web" large className="mt-16">
 
-					<WebWorkLink image="/images/thumbnails/simple-typing.png" title="Simple Typing" to="/works/simple-typing" />
+					{posts.map((post: any) => (
+
+						<div key={post.fileSlug}>
+
+							<WebWorkLink
+								image={post.frontMatter.thumbnail}
+								title={post.frontMatter.name}
+								to={`/works/${post.fileSlug}`}
+							/>
+						</div>
+					))}
 				</GallerySection>
 			</main>
 		</>
