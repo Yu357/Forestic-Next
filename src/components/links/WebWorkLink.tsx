@@ -13,7 +13,7 @@ function WebWorkLink(props: Props) {
 
 			<div>
 
-				<Link href={props.to} onClick={() => window.scroll(0, 0)} className="transition hover:brightness-95">
+				<Link href={props.to} className="transition hover:brightness-95">
 
 					<img src={props.image} alt={props.title} className="w-full border hover:border-gray-100" />
 				</Link>
@@ -21,7 +21,7 @@ function WebWorkLink(props: Props) {
 
 			<div className="mt-4 text-center">
 
-				<Link href={props.to} onClick={() => window.scroll(0, 0)} className="hover:underline">{props.title}</Link>
+				<Link href={props.to} className="hover:underline">{props.title}</Link>
 			</div>
 		</div>
 	)
