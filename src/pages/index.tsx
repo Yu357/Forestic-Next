@@ -4,14 +4,16 @@ import TextSection from "@/components/sections/TextSection"
 import Head from "next/head"
 import fs from 'fs'
 import matter from 'gray-matter'
+import MobileWorkLink from "@/components/links/MobileWorkLink"
 
 export const getStaticProps = () => {
 
 	// posts内のファイルをすべて取得
-	const files = fs.readdirSync('src/posts/web-works')
+	const webWorkMdFiles = fs.readdirSync('src/posts/web-works')
+	const mobileWorkMdFiles = fs.readdirSync('src/posts/mobile-works')
 
-	// ファイルの内容を取得
-	const posts = files.map((fileName) => {
+	// Web作品のmdファイルの内容を取得
+	const webPosts = webWorkMdFiles.map((fileName) => {
 
 		// ファイル名
 		const fileSlug = fileName.replace(/\.md$/, '')
@@ -28,14 +30,33 @@ export const getStaticProps = () => {
 		}
 	})
 
+	// モバイル作品のmdファイルの内容を取得
+	const mobilePosts = mobileWorkMdFiles.map((fileName) => {
+
+		// ファイル名
+		const fileSlug = fileName.replace(/\.md$/, '')
+
+		// ファイルの内容
+		const fileContent = fs.readFileSync(`src/posts/mobile-works/${fileName}`, 'utf-8')
+
+		// ファイルのFront MatterとContentを分離
+		const { data, content } = matter(fileContent)
+
+		return {
+			frontMatter: data,
+			fileSlug,
+		}
+	})
+
 	return {
 		props: {
-			posts,
+			webPosts: webPosts,
+			mobilePosts: mobilePosts
 		},
 	}
 }
 
-export default function Home({ posts }: any) {
+export default function Home({ webPosts, mobilePosts }: any) {
 	return (
 
 		<>
@@ -57,12 +78,27 @@ export default function Home({ posts }: any) {
 
 				<GallerySection title="Web" large className="mt-16">
 
-					{posts.map((post: any) => (
+					{webPosts.map((post: any) => (
 
 						<div key={post.fileSlug}>
 
 							<WebWorkLink
 								image={post.frontMatter.thumbnail}
+								title={post.frontMatter.name}
+								to={`/works/${post.fileSlug}`}
+							/>
+						</div>
+					))}
+				</GallerySection>
+
+				<GallerySection title="Mobile" large className="mt-16" noDivider>
+
+					{mobilePosts.map((post: any) => (
+
+						<div key={post.fileSlug}>
+
+							<MobileWorkLink
+								images={post.frontMatter.thumbnails}
 								title={post.frontMatter.name}
 								to={`/works/${post.fileSlug}`}
 							/>
