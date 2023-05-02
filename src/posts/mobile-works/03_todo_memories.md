@@ -1,6 +1,6 @@
 ---
 name: 'Todo Memories'
-thumbnail: '/images/thumbnails/'
+thumbnails: ['/images/thumbnails/todo-memories00.png', '/images/thumbnails/todo-memories01.png', '/images/thumbnails/todo-memories02.png']
 headerImage: '/images/headers/todo-memories.png'
 ---
 

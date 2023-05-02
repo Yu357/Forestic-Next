@@ -1,6 +1,6 @@
 ---
 name: 'Binary Clock for iOS'
-thumbnail: '/images/thumbnails/'
+thumbnails: ['/images/thumbnails/binary-clock-ios00.png', '/images/thumbnails/binary-clock-ios01.png', '/images/thumbnails/binary-clock-ios02.png']
 headerImage: '/images/headers/binary-clock-ios.png'
 ---
 

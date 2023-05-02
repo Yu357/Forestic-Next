@@ -1,6 +1,6 @@
 ---
 name: 'Meetings for iOS'
-thumbnail: '/images/thumbnails/'
+thumbnails: ['/images/thumbnails/meetings-ios00.png', '/images/thumbnails/meetings-ios01.png', '/images/thumbnails/meetings-ios02.png']
 headerImage: '/images/headers/meetings-ios.png'
 ---
 

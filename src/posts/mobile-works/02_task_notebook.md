@@ -1,6 +1,6 @@
 ---
 name: 'Task Notebook'
-thumbnail: '/images/thumbnails/'
+thumbnails: ['/images/thumbnails/task-notebook00.png', '/images/thumbnails/task-notebook01.png', '/images/thumbnails/task-notebook02.png']
 headerImage: '/images/headers/task-notebook.png'
 ---
 
