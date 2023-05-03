@@ -5,6 +5,7 @@ import Head from "next/head"
 import fs from 'fs'
 import matter from 'gray-matter'
 import MobileWorkLink from "@/components/links/MobileWorkLink"
+import Footer from "@/components/sections/Footer"
 
 export const getStaticProps = () => {
 
@@ -106,6 +107,8 @@ export default function Home({ webPosts, mobilePosts }: any) {
 					))}
 				</GallerySection>
 			</main>
+
+			<Footer />
 		</>
 	)
 }
