@@ -19,4 +19,8 @@
 	.width-sm {
 		width: 640px;
 	}
+
+	.black-button {
+		@apply py-4 px-8 bg-gray-800 text-white hover:opacity-80 transition
+	}
 }

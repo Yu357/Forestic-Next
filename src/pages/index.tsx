@@ -5,6 +5,8 @@ import Head from "next/head"
 import fs from 'fs'
 import matter from 'gray-matter'
 import MobileWorkLink from "@/components/links/MobileWorkLink"
+import Footer from "@/components/sections/Footer"
+import Link from "next/link"
 
 export const getStaticProps = () => {
 
@@ -105,7 +107,13 @@ export default function Home({ webPosts, mobilePosts }: any) {
 						</div>
 					))}
 				</GallerySection>
+
+				<div className="mt-20 text-center">
+					<Link href="/about" className="black-button">自己紹介を見る</Link>
+				</div>
 			</main>
+
+			<Footer />
 		</>
 	)
 }
