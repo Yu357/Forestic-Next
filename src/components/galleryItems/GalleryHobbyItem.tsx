@@ -1,7 +1,8 @@
 import Image from "next/image"
 
 interface Props {
-	image: string
+	imageSrc: string
+	imageAlt: string
 	title?: string
 }
 
@@ -11,8 +12,8 @@ function GalleryHobbyItem(props: Props) {
 		<div>
 
 			<Image
-				src={props.image}
-				alt="--"
+				src={props.imageSrc}
+				alt={props.imageAlt}
 				width={900}
 				height={600}
 				className="border"

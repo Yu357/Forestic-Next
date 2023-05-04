@@ -16,7 +16,8 @@ function about() {
 			<main>
 
 				<TextSection
-					image="/images/headers/desk.png"
+					imageSrc="/images/headers/desk.png"
+					imageAlt="机の上のパソコン"
 					large
 					title="About me"
 					detail={`大阪で情報処理を学んでいる専門学生です。学校ではプログラミングやインフラ構築、チーム開発などを学んでいます。\n学校の授業以外でも自主的にWebアプリやモバイルアプリを作っています。一からシステムを作り上げるのはとても大変ですが、自分の作りたいものを作ることができた時はとても嬉しいです。\n\n2020年4月 ECCコンピュータ専門学校 高度情報処理研究学科に入学\n2024年3月 卒業予定`}
@@ -63,11 +64,11 @@ function about() {
 					className='mt-16'
 				>
 
-					<GalleryHobbyItem image="/images/hobbys/movie.png" title="最近観た映画は「すずめの戸締まり」です" />
-					<GalleryHobbyItem image="/images/hobbys/genshin.png" title="最近ハマっているゲーム「原神」" />
+					<GalleryHobbyItem imageSrc="/images/hobbys/movie.png" imageAlt="すずめの戸締まりのパンフレット" title="最近観た映画は「すずめの戸締まり」です" />
+					<GalleryHobbyItem imageSrc="/images/hobbys/genshin.png" imageAlt="原神のスクリーンショット" title="最近ハマっているゲーム「原神」" />
 
-					<GalleryHobbyItem image="/images/hobbys/osaka-castle.png" title="ジョギングでは大阪城が見えるコースを走っています" />
-					<GalleryHobbyItem image="/images/hobbys/illustration.png" title="iPadで好きなキャラクターをお絵描き" />
+					<GalleryHobbyItem imageSrc="/images/hobbys/osaka-castle.png" imageAlt="大阪城" title="ジョギングでは大阪城が見えるコースを走っています" />
+					<GalleryHobbyItem imageSrc="/images/hobbys/illustration.png" imageAlt="iPadのお絵描きアプリのスクリーンショット" title="iPadで好きなキャラクターをお絵描き" />
 				</GallerySection>
 			</main>
 		</>

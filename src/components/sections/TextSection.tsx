@@ -1,8 +1,8 @@
 import Image from "next/image"
 
 interface Props {
-	image?: string
-	alt?: string
+	imageSrc?: string
+	imageAlt?: string
 
 	title?: string
 	detail?: string
@@ -21,20 +21,20 @@ function TextSection(props: Props) {
 	return (
 		<div className={props.className}>
 
-			{props.image &&
+			{props.imageSrc && props.imageAlt &&
 
 				<div className={`mx-auto w-full ${props.large ? "lg:width-lg" : "md:width-md"}`}>
 
 					<Image
-						src={props.image}
+						src={props.imageSrc}
 						width={1200}
 						height={500}
-						alt={props.alt ?? "-"}
+						alt={props.imageAlt}
 					/>
 				</div>
 			}
 
-			<div className={`mx-auto width-full px-4 md:width-md md:px-0 ${props.image ? "mt-4" : ""}`}>
+			<div className={`mx-auto width-full px-4 md:width-md md:px-0 ${props.imageSrc ? "mt-4" : ""}`}>
 
 				<div className={props.noDivider ? "" : "pb-16 border-b"}>
 
