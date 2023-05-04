@@ -3,6 +3,7 @@ import GallerySection from "@/components/sections/GallerySection";
 import TextSection from "@/components/sections/TextSection";
 import Head from "next/head";
 import "devicon"
+import GalleryHobbyItem from "@/components/galleryItems/GalleryHobbyItem";
 
 function about() {
 	return (
@@ -51,6 +52,22 @@ function about() {
 
 					<GalleryTechItem title='Git'><i className="devicon-git-plain colored" /></GalleryTechItem>
 					<GalleryTechItem title='Docker'><i className="devicon-docker-plain-wordmark colored" /></GalleryTechItem>
+				</GallerySection>
+
+				<GallerySection
+					title='趣味'
+					detail={`趣味は映画鑑賞、ビデオゲーム、ジョギング、アプリ開発、そしてiPadでイラストを描くことです。`}
+					detailCenter
+					noDivider
+					twoColumns
+					className='mt-16'
+				>
+
+					<GalleryHobbyItem image="/images/hobbys/movie.png" title="最近観た映画は「すずめの戸締まり」です" />
+					<GalleryHobbyItem image="/images/hobbys/genshin.png" title="最近ハマっているゲーム「原神」" />
+
+					<GalleryHobbyItem image="/images/hobbys/osaka-castle.png" title="ジョギングでは大阪城が見えるコースを走っています" />
+					<GalleryHobbyItem image="/images/hobbys/illustration.png" title="iPadで好きなキャラクターをお絵描き" />
 				</GallerySection>
 			</main>
 		</>
