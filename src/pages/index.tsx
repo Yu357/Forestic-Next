@@ -112,8 +112,6 @@ export default function Home({ webPosts, mobilePosts }: any) {
 					<Link href="/about" className="black-button">自己紹介を見る</Link>
 				</div>
 			</main>
-
-			<Footer />
 		</>
 	)
 }

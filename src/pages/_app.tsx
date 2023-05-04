@@ -1,3 +1,4 @@
+import Footer from '@/components/sections/Footer'
 import Header from '@/components/sections/Header'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
@@ -6,8 +7,12 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
 
-			<Header />
-			<Component {...pageProps} />
+			<div className='h-screen'>
+
+				<Header />
+				<Component {...pageProps} />
+				<Footer className="sticky top-full"/>
+			</div>
 		</>
 	)
 }
