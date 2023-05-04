@@ -7,7 +7,7 @@ interface Props {
 	to: string
 }
 
-function MobileWorkLink(props: Props) {
+function GalleryMobileWorkLink(props: Props) {
 
 	return (
 		<div>
@@ -37,4 +37,4 @@ function MobileWorkLink(props: Props) {
 	)
 }
 
-export default MobileWorkLink
+export default GalleryMobileWorkLink

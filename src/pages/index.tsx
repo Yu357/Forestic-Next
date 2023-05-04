@@ -1,11 +1,10 @@
-import WebWorkLink from "@/components/links/WebWorkLink"
+import GalleryWebWorkLink from "@/components/galleryItems/GalleryWebWorkLink"
 import GallerySection from "@/components/sections/GallerySection"
 import TextSection from "@/components/sections/TextSection"
 import Head from "next/head"
 import fs from 'fs'
 import matter from 'gray-matter'
-import MobileWorkLink from "@/components/links/MobileWorkLink"
-import Footer from "@/components/sections/Footer"
+import GalleryMobileWorkLink from "@/components/galleryItems/GalleryMobileWorkLink"
 import Link from "next/link"
 
 export const getStaticProps = () => {
@@ -70,8 +69,8 @@ export default function Home({ webPosts, mobilePosts }: any) {
 			<main>
 
 				<TextSection
-					image="/images/headers/development.png"
-					alt="パソコン"
+					imageSrc="/images/headers/development.png"
+					imageAlt="パソコン"
 					large
 					title="つくってみたいものをつくる"
 					detail={`専門学校に入学してからそろそろ3年。自分が作ってみたいものを自由に作って暮らしていたら、いつの間にかたくさんの作品ができていました。\nせっかくなので、今まで趣味で作ってきた作品をまとめてみました。ぜひご覧ください!`}
@@ -84,7 +83,7 @@ export default function Home({ webPosts, mobilePosts }: any) {
 
 						<div key={post.fileSlug}>
 
-							<WebWorkLink
+							<GalleryWebWorkLink
 								image={post.frontMatter.thumbnail}
 								title={post.frontMatter.name}
 								to={`/works/${post.fileSlug}`}
@@ -99,7 +98,7 @@ export default function Home({ webPosts, mobilePosts }: any) {
 
 						<div key={post.fileSlug}>
 
-							<MobileWorkLink
+							<GalleryMobileWorkLink
 								images={post.frontMatter.thumbnails}
 								title={post.frontMatter.name}
 								to={`/works/${post.fileSlug}`}
