@@ -7,7 +7,7 @@ interface Props {
 	to: string
 }
 
-function WebWorkLink(props: Props) {
+function GalleryWebWorkLink(props: Props) {
 	
 	return (
 		<div>
@@ -34,4 +34,4 @@ function WebWorkLink(props: Props) {
 	)
 }
 
-export default WebWorkLink;
+export default GalleryWebWorkLink;

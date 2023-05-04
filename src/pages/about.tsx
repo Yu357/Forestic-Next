@@ -1,4 +1,4 @@
-import GalleryTechItem from "@/components/others/GalleryTechItem";
+import GalleryTechItem from "@/components/galleryItems/GalleryTechItem";
 import GallerySection from "@/components/sections/GallerySection";
 import TextSection from "@/components/sections/TextSection";
 import Head from "next/head";

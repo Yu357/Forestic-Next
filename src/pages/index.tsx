@@ -1,11 +1,10 @@
-import WebWorkLink from "@/components/links/WebWorkLink"
+import GalleryWebWorkLink from "@/components/galleryItems/GalleryWebWorkLink"
 import GallerySection from "@/components/sections/GallerySection"
 import TextSection from "@/components/sections/TextSection"
 import Head from "next/head"
 import fs from 'fs'
 import matter from 'gray-matter'
-import MobileWorkLink from "@/components/links/MobileWorkLink"
-import Footer from "@/components/sections/Footer"
+import GalleryMobileWorkLink from "@/components/galleryItems/GalleryMobileWorkLink"
 import Link from "next/link"
 
 export const getStaticProps = () => {
@@ -84,7 +83,7 @@ export default function Home({ webPosts, mobilePosts }: any) {
 
 						<div key={post.fileSlug}>
 
-							<WebWorkLink
+							<GalleryWebWorkLink
 								image={post.frontMatter.thumbnail}
 								title={post.frontMatter.name}
 								to={`/works/${post.fileSlug}`}
@@ -99,7 +98,7 @@ export default function Home({ webPosts, mobilePosts }: any) {
 
 						<div key={post.fileSlug}>
 
-							<MobileWorkLink
+							<GalleryMobileWorkLink
 								images={post.frontMatter.thumbnails}
 								title={post.frontMatter.name}
 								to={`/works/${post.fileSlug}`}
