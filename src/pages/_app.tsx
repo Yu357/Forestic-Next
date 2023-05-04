@@ -7,9 +7,12 @@ export default function App({ Component, pageProps }: AppProps) {
 	return (
 		<>
 
-			<Header />
-			<Component {...pageProps} />
-			<Footer/>
+			<div className='h-screen'>
+
+				<Header />
+				<Component {...pageProps} />
+				<Footer className="sticky top-full"/>
+			</div>
 		</>
 	)
 }
