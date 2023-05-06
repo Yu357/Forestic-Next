@@ -1,5 +1,5 @@
 ---
-name: 'Thread Center'
+title: 'Thread Center'
 thumbnail: '/images/thumbnails/thread-center.png'
 headerImage: '/images/headers/thread-center.png'
 ---

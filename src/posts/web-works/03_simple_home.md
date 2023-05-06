@@ -1,5 +1,5 @@
 ---
-name: 'Simple Home'
+title: 'Simple Home'
 thumbnail: '/images/thumbnails/simple-home.png'
 headerImage: '/images/headers/simple-home.png'
 ---

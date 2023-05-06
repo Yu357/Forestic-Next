@@ -1,5 +1,5 @@
 ---
-name: 'Thread Hub for Web'
+title: 'Thread Hub for Web'
 thumbnail: '/images/thumbnails/thread-hub-web.png'
 headerImage: '/images/headers/thread-hub-web.png'
 ---

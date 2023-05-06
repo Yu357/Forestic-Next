@@ -1,5 +1,5 @@
 ---
-name: 'Meetings for Web'
+title: 'Meetings for Web'
 thumbnail: '/images/thumbnails/meetings-web.png'
 headerImage: '/images/headers/meetings-web.png'
 ---

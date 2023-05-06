@@ -1,5 +1,5 @@
 ---
-name: 'Todo Diaries'
+title: 'Todo Diaries'
 thumbnails: ['/images/thumbnails/todo-diaries00.png', '/images/thumbnails/todo-diaries01.png', '/images/thumbnails/todo-diaries02.png']
 headerImage: '/images/headers/todo-diaries.png'
 ---

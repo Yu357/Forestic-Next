@@ -1,5 +1,5 @@
 ---
-name: 'Binary Clock for Web'
+title: 'Binary Clock for Web'
 thumbnail: '/images/thumbnails/binary-clock-web.png'
 headerImage: '/images/headers/binary-clock-web.png'
 ---

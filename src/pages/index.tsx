@@ -85,7 +85,7 @@ export default function Home({ webPosts, mobilePosts }: any) {
 
 							<GalleryWebWorkLink
 								image={post.frontMatter.thumbnail}
-								title={post.frontMatter.name}
+								title={post.frontMatter.title}
 								to={`/works/${post.fileSlug}`}
 							/>
 						</div>
@@ -100,7 +100,7 @@ export default function Home({ webPosts, mobilePosts }: any) {
 
 							<GalleryMobileWorkLink
 								images={post.frontMatter.thumbnails}
-								title={post.frontMatter.name}
+								title={post.frontMatter.title}
 								to={`/works/${post.fileSlug}`}
 							/>
 						</div>

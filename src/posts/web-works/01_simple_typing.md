@@ -1,5 +1,5 @@
 ---
-name: 'Simple Typing'
+title: 'Simple Typing'
 thumbnail: '/images/thumbnails/simple-typing.png'
 headerImage: '/images/headers/simple-typing.png'
 ---
