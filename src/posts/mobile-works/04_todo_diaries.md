@@ -4,6 +4,8 @@ thumbnails: ['/images/thumbnails/todo-diaries00.png', '/images/thumbnails/todo-d
 headerImage: '/images/headers/todo-diaries.png'
 ---
 
+# Todo Diaries
+
 ## 概要
 iOS向けのTodoアプリです。達成したTodoを後から振り返ることができます。
 

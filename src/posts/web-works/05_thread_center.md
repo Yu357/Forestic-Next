@@ -3,6 +3,9 @@ name: 'Thread Center'
 thumbnail: '/images/thumbnails/thread-center.png'
 headerImage: '/images/headers/thread-center.png'
 ---
+
+# Thread Center
+
 ## 概要
 Web向けのアカウント制掲示板アプリです。Laravelの勉強のために開発しました。
 

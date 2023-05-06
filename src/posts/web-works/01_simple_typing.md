@@ -4,6 +4,8 @@ thumbnail: '/images/thumbnails/simple-typing.png'
 headerImage: '/images/headers/simple-typing.png'
 ---
 
+# Simple Typing
+
 ## 概要
 一年生の頃に制作したタイピングゲームです。
 

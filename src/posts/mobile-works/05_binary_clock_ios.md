@@ -4,6 +4,8 @@ thumbnails: ['/images/thumbnails/binary-clock-ios00.png', '/images/thumbnails/bi
 headerImage: '/images/headers/binary-clock-ios.png'
 ---
 
+# Binary Clock for iOS
+
 ## 概要
 iOS向けの二進数時計アプリです。  
 6つの列がそれぞれ数字を表しており、左から時間の10の位、時間の1の位、分の10の位、分の1の位、秒の10の位、秒の1の位を表しています。左から123456となった場合、12時34分56秒となります。

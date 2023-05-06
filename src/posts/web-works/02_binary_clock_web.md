@@ -4,6 +4,8 @@ thumbnail: '/images/thumbnails/binary-clock-web.png'
 headerImage: '/images/headers/binary-clock-web.png'
 ---
 
+# Binary Clock for Web
+
 ## 概要
 Web向けの二進数時計アプリです。  
 6つの列がそれぞれ数字を表しており、左から順に時間の10の位、時間の1の位、分の10の位、分の1の位、秒の10の位、秒の1の位を表しています。左から123456となった場合、12時34分56秒となります。

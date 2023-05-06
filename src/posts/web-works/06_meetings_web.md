@@ -4,6 +4,8 @@ thumbnail: '/images/thumbnails/meetings-web.png'
 headerImage: '/images/headers/meetings-web.png'
 ---
 
+# Meetings for Web
+
 ## 概要
 Web向けのアカウント制掲示板アプリです。  
 スレッド内でコメントを投稿し合うことで、ユーザー同士が交流することができます。
