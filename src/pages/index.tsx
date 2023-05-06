@@ -17,7 +17,7 @@ export const getStaticProps = () => {
 	const webPosts = webWorkMdFiles.map((fileName) => {
 
 		// ファイル名
-		const fileSlug = fileName.replace(/\.md$/, '')
+		const slug = fileName.replace(/\.md$/, '')
 
 		// ファイルの内容
 		const fileContent = fs.readFileSync(`src/posts/web-works/${fileName}`, 'utf-8')
@@ -27,7 +27,7 @@ export const getStaticProps = () => {
 
 		return {
 			frontMatter: data,
-			fileSlug,
+			slug: slug,
 		}
 	})
 
@@ -35,7 +35,7 @@ export const getStaticProps = () => {
 	const mobilePosts = mobileWorkMdFiles.map((fileName) => {
 
 		// ファイル名
-		const fileSlug = fileName.replace(/\.md$/, '')
+		const slug = fileName.replace(/\.md$/, '')
 
 		// ファイルの内容
 		const fileContent = fs.readFileSync(`src/posts/mobile-works/${fileName}`, 'utf-8')
@@ -45,7 +45,7 @@ export const getStaticProps = () => {
 
 		return {
 			frontMatter: data,
-			fileSlug,
+			slug: slug,
 		}
 	})
 
@@ -81,12 +81,12 @@ export default function Home({ webPosts, mobilePosts }: any) {
 
 					{webPosts.map((post: any) => (
 
-						<div key={post.fileSlug}>
+						<div key={post.slug}>
 
 							<GalleryWebWorkLink
 								image={post.frontMatter.thumbnail}
 								title={post.frontMatter.title}
-								to={`/works/${post.fileSlug}`}
+								to={`/works/${post.slug}`}
 							/>
 						</div>
 					))}
@@ -96,12 +96,12 @@ export default function Home({ webPosts, mobilePosts }: any) {
 
 					{mobilePosts.map((post: any) => (
 
-						<div key={post.fileSlug}>
+						<div key={post.slug}>
 
 							<GalleryMobileWorkLink
 								images={post.frontMatter.thumbnails}
 								title={post.frontMatter.title}
-								to={`/works/${post.fileSlug}`}
+								to={`/works/${post.slug}`}
 							/>
 						</div>
 					))}
