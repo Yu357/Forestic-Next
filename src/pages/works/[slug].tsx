@@ -2,7 +2,6 @@ import Head from "next/head"
 import fs from 'fs'
 import matter from 'gray-matter'
 import { marked } from 'marked'
-import Image from "next/image"
 import TextSection from "@/components/sections/TextSection"
 import Link from "next/link"
 
