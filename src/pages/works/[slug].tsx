@@ -3,6 +3,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import { marked } from 'marked'
 import Image from "next/image"
+import TextSection from "@/components/sections/TextSection"
 
 export async function getStaticPaths() {
 
@@ -54,7 +55,7 @@ interface Props {
 function WorkPage(props: Props) {
 
 	return (
-		
+
 		<>
 
 			<Head>
@@ -63,16 +64,10 @@ function WorkPage(props: Props) {
 
 			<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
 
-				<Image src={props.frontMatter.thumbnail}
-					alt={`${props.frontMatter.title}の風景`}
-					width={1200}
-					height={500}
-					className="bg-gray-200"
-				/>
+				<TextSection imageSrc={props.frontMatter.headerImage} imageAlt={`${props.frontMatter.title}のスクリーンショット`} large className="mt-6" noDivider>
 
-				<h1 className="text-2xl font-bold mt-6">{props.frontMatter.title}</h1>
-
-				<div dangerouslySetInnerHTML={{ __html: marked(props.content) }} className="markdown"></div>
+					<div dangerouslySetInnerHTML={{ __html: marked(props.content) }} className="markdown mt-4"></div>
+				</TextSection>
 			</main>
 		</>
 	)
