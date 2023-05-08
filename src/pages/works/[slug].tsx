@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import { marked } from 'marked'
 import Image from "next/image"
 import TextSection from "@/components/sections/TextSection"
+import Link from "next/link"
 
 export async function getStaticPaths() {
 
@@ -68,6 +69,10 @@ function WorkPage(props: Props) {
 
 					<div dangerouslySetInnerHTML={{ __html: marked(props.content) }} className="markdown mt-4"></div>
 				</TextSection>
+
+				<div className="mt-20 text-center">
+					<Link href="/" className="black-button">作品一覧に戻る</Link>
+				</div>
 			</main>
 		</>
 	)
