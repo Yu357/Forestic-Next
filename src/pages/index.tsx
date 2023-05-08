@@ -8,56 +8,41 @@ import GalleryMobileWorkLink from "@/components/galleryItems/GalleryMobileWorkLi
 import Link from "next/link"
 
 export const getStaticProps = () => {
+	
+	// 投稿ファイルのファイル名をすべて取得
+	const fileNames = fs.readdirSync('src/posts')
 
-	// posts内のファイルをすべて取得
-	const webWorkMdFiles = fs.readdirSync('src/posts/web-works')
-	const mobileWorkMdFiles = fs.readdirSync('src/posts/mobile-works')
+	// mdファイルの内容を取得
+	const workPosts = fileNames.map((fileName) => {
 
-	// Web作品のmdファイルの内容を取得
-	const webPosts = webWorkMdFiles.map((fileName) => {
-
-		// ファイル名
+		// 拡張子無しのファイル名
 		const slug = fileName.replace(/\.md$/, '')
 
 		// ファイルの内容
-		const fileContent = fs.readFileSync(`src/posts/web-works/${fileName}`, 'utf-8')
+		const fileContent = fs.readFileSync(`src/posts/${fileName}`, 'utf-8')
 
 		// ファイルのFront MatterとContentを分離
 		const { data, content } = matter(fileContent)
 
 		return {
-			frontMatter: data,
 			slug: slug,
+			frontMatter: data,
 		}
 	})
 
-	// モバイル作品のmdファイルの内容を取得
-	const mobilePosts = mobileWorkMdFiles.map((fileName) => {
-
-		// ファイル名
-		const slug = fileName.replace(/\.md$/, '')
-
-		// ファイルの内容
-		const fileContent = fs.readFileSync(`src/posts/mobile-works/${fileName}`, 'utf-8')
-
-		// ファイルのFront MatterとContentを分離
-		const { data, content } = matter(fileContent)
-
-		return {
-			frontMatter: data,
-			slug: slug,
-		}
-	})
+	// postsをwebとmobileに分ける
+	const webWorkPosts: any[] = workPosts.slice(0, 6)
+	const mobileWorkPosts: any[] = workPosts.slice(6, 12)
 
 	return {
 		props: {
-			webPosts: webPosts,
-			mobilePosts: mobilePosts
+			webWorkPosts: webWorkPosts,
+			mobileWorkPosts: mobileWorkPosts
 		},
 	}
 }
 
-export default function Home({ webPosts, mobilePosts }: any) {
+export default function Home({ webWorkPosts, mobileWorkPosts }: any) {
 	return (
 
 		<>
@@ -79,7 +64,7 @@ export default function Home({ webPosts, mobilePosts }: any) {
 
 				<GallerySection title="Web" large className="mt-16">
 
-					{webPosts.map((post: any) => (
+					{webWorkPosts.map((post: any) => (
 
 						<div key={post.slug}>
 
@@ -94,7 +79,7 @@ export default function Home({ webPosts, mobilePosts }: any) {
 
 				<GallerySection title="Mobile" large className="mt-16" noDivider>
 
-					{mobilePosts.map((post: any) => (
+					{mobileWorkPosts.map((post: any) => (
 
 						<div key={post.slug}>
 
