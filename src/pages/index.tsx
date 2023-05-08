@@ -6,9 +6,10 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import GalleryMobileWorkLink from "@/components/galleryItems/GalleryMobileWorkLink"
 import Link from "next/link"
+import Post from "@/entities/Post"
 
 export const getStaticProps = () => {
-	
+
 	// 投稿ファイルのファイル名をすべて取得
 	const fileNames = fs.readdirSync('src/posts')
 
@@ -31,9 +32,9 @@ export const getStaticProps = () => {
 	})
 
 	// postsをwebとmobileに分ける
-	const webWorkPosts: any[] = workPosts.slice(0, 6)
-	const mobileWorkPosts: any[] = workPosts.slice(6, 12)
-
+	const webWorkPosts: Post[] = workPosts.slice(0, 6)
+	const mobileWorkPosts: Post[] = workPosts.slice(6, 12)
+	
 	return {
 		props: {
 			webWorkPosts: webWorkPosts,
@@ -42,7 +43,15 @@ export const getStaticProps = () => {
 	}
 }
 
-export default function Home({ webWorkPosts, mobileWorkPosts }: any) {
+
+
+interface Props {
+	webWorkPosts: Post[],
+	mobileWorkPosts: Post[]
+}
+
+export default function Home(props: Props ) {
+
 	return (
 
 		<>
@@ -64,7 +73,7 @@ export default function Home({ webWorkPosts, mobileWorkPosts }: any) {
 
 				<GallerySection title="Web" large className="mt-16">
 
-					{webWorkPosts.map((post: any) => (
+					{props.webWorkPosts.map((post: Post) => (
 
 						<div key={post.slug}>
 
@@ -79,7 +88,7 @@ export default function Home({ webWorkPosts, mobileWorkPosts }: any) {
 
 				<GallerySection title="Mobile" large className="mt-16" noDivider>
 
-					{mobileWorkPosts.map((post: any) => (
+					{props.mobileWorkPosts.map((post: Post) => (
 
 						<div key={post.slug}>
 
