@@ -30,6 +30,7 @@ function TextSection(props: Props) {
 						width={1200}
 						height={500}
 						alt={props.imageAlt}
+						className="bg-gray-100"
 					/>
 				</div>
 			}
