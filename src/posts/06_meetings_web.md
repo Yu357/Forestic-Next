@@ -1,8 +1,10 @@
 ---
-name: 'Meetings for Web'
+title: 'Meetings for Web'
 thumbnail: '/images/thumbnails/meetings-web.png'
 headerImage: '/images/headers/meetings-web.png'
 ---
+
+# Meetings for Web
 
 ## 概要
 Web向けのアカウント制掲示板アプリです。  

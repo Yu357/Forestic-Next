@@ -1,8 +1,10 @@
 ---
-name: 'Meetings for iOS'
+title: 'Meetings for iOS'
 thumbnails: ['/images/thumbnails/meetings-ios00.png', '/images/thumbnails/meetings-ios01.png', '/images/thumbnails/meetings-ios02.png']
 headerImage: '/images/headers/meetings-ios.png'
 ---
+
+# Meetings for iOS
 
 ## 概要
 iOS向けのアカウント制掲示板アプリです。

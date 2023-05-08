@@ -6,58 +6,52 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import GalleryMobileWorkLink from "@/components/galleryItems/GalleryMobileWorkLink"
 import Link from "next/link"
+import Post from "@/entities/Post"
 
 export const getStaticProps = () => {
 
-	// posts内のファイルをすべて取得
-	const webWorkMdFiles = fs.readdirSync('src/posts/web-works')
-	const mobileWorkMdFiles = fs.readdirSync('src/posts/mobile-works')
+	// 投稿ファイルのファイル名をすべて取得
+	const fileNames = fs.readdirSync('src/posts')
 
-	// Web作品のmdファイルの内容を取得
-	const webPosts = webWorkMdFiles.map((fileName) => {
+	// mdファイルの内容を取得
+	const workPosts = fileNames.map((fileName) => {
 
-		// ファイル名
-		const fileSlug = fileName.replace(/\.md$/, '')
+		// 拡張子無しのファイル名
+		const slug = fileName.replace(/\.md$/, '')
 
 		// ファイルの内容
-		const fileContent = fs.readFileSync(`src/posts/web-works/${fileName}`, 'utf-8')
+		const fileContent = fs.readFileSync(`src/posts/${fileName}`, 'utf-8')
 
 		// ファイルのFront MatterとContentを分離
 		const { data, content } = matter(fileContent)
 
 		return {
+			slug: slug,
 			frontMatter: data,
-			fileSlug,
 		}
 	})
 
-	// モバイル作品のmdファイルの内容を取得
-	const mobilePosts = mobileWorkMdFiles.map((fileName) => {
-
-		// ファイル名
-		const fileSlug = fileName.replace(/\.md$/, '')
-
-		// ファイルの内容
-		const fileContent = fs.readFileSync(`src/posts/mobile-works/${fileName}`, 'utf-8')
-
-		// ファイルのFront MatterとContentを分離
-		const { data, content } = matter(fileContent)
-
-		return {
-			frontMatter: data,
-			fileSlug,
-		}
-	})
-
+	// postsをwebとmobileに分ける
+	const webWorkPosts: Post[] = workPosts.slice(0, 6)
+	const mobileWorkPosts: Post[] = workPosts.slice(6, 12)
+	
 	return {
 		props: {
-			webPosts: webPosts,
-			mobilePosts: mobilePosts
+			webWorkPosts: webWorkPosts,
+			mobileWorkPosts: mobileWorkPosts
 		},
 	}
 }
 
-export default function Home({ webPosts, mobilePosts }: any) {
+
+
+interface Props {
+	webWorkPosts: Post[],
+	mobileWorkPosts: Post[]
+}
+
+export default function Home(props: Props ) {
+
 	return (
 
 		<>
@@ -79,14 +73,14 @@ export default function Home({ webPosts, mobilePosts }: any) {
 
 				<GallerySection title="Web" large className="mt-16">
 
-					{webPosts.map((post: any) => (
+					{props.webWorkPosts.map((post: Post) => (
 
-						<div key={post.fileSlug}>
+						<div key={post.slug}>
 
 							<GalleryWebWorkLink
 								image={post.frontMatter.thumbnail}
-								title={post.frontMatter.name}
-								to={`/works/${post.fileSlug}`}
+								title={post.frontMatter.title}
+								to={`/works/${post.slug}`}
 							/>
 						</div>
 					))}
@@ -94,14 +88,14 @@ export default function Home({ webPosts, mobilePosts }: any) {
 
 				<GallerySection title="Mobile" large className="mt-16" noDivider>
 
-					{mobilePosts.map((post: any) => (
+					{props.mobileWorkPosts.map((post: Post) => (
 
-						<div key={post.fileSlug}>
+						<div key={post.slug}>
 
 							<GalleryMobileWorkLink
 								images={post.frontMatter.thumbnails}
-								title={post.frontMatter.name}
-								to={`/works/${post.fileSlug}`}
+								title={post.frontMatter.title}
+								to={`/works/${post.slug}`}
 							/>
 						</div>
 					))}

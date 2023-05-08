@@ -70,6 +70,11 @@ function about() {
 					<GalleryHobbyItem imageSrc="/images/hobbys/osaka-castle.png" imageAlt="大阪城" title="ジョギングでは大阪城が見えるコースを走っています" />
 					<GalleryHobbyItem imageSrc="/images/hobbys/illustration.png" imageAlt="iPadのお絵描きアプリのスクリーンショット" title="iPadで好きなキャラクターをお絵描き" />
 				</GallerySection>
+
+				<div className="mt-20 text-center">
+					
+					<a href="https://github.com/Yu357" target="blank" className="black-button">GitHubプロフィールを見る</a>
+				</div>
 			</main>
 		</>
 	);

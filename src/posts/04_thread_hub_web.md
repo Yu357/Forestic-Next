@@ -1,8 +1,10 @@
 ---
-name: 'Thread Hub for Web'
+title: 'Thread Hub for Web'
 thumbnail: '/images/thumbnails/thread-hub-web.png'
 headerImage: '/images/headers/thread-hub-web.png'
 ---
+
+# Thread Hub for Web
 
 ## 概要
 Web向けの匿名掲示板アプリです。

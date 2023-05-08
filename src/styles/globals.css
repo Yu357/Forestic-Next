@@ -24,3 +24,43 @@
 		@apply py-4 px-8 bg-gray-800 text-white hover:opacity-80 transition
 	}
 }
+
+.markdown h1 {
+	@apply text-2xl font-bold text-center
+}
+
+.markdown h2 {
+	@apply mt-6 font-bold text-xl
+}
+
+.markdown p {
+	@apply mb-4 text-gray-600 mt-1 leading-7
+}
+
+.markdown a {
+	@apply text-gray-600 underline hover:no-underline hover:text-gray-400 transition
+}
+
+.markdown ul {
+	@apply list-disc pl-6 mt-1
+}
+
+.markdown li {
+	@apply text-gray-600 mb-1 leading-7
+}
+
+.markdown div {
+	@apply mt-2
+}
+
+.markdown img {
+	@apply border mt-4
+}
+
+.markdown div {
+	@apply flex flex-wrap justify-between gap-x-2
+}
+
+.markdown div img {
+	@apply block
+}

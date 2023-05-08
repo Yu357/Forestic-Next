@@ -1,8 +1,10 @@
 ---
-name: 'Task Notebook'
+title: 'Task Notebook'
 thumbnails: ['/images/thumbnails/task-notebook00.png', '/images/thumbnails/task-notebook01.png', '/images/thumbnails/task-notebook02.png']
 headerImage: '/images/headers/task-notebook.png'
 ---
+
+# Task Notebook
 
 ## 概要
 Android向けのTodoアプリ。タスクを完了済みに設定でき、後から振り返ることができます。

@@ -1,8 +1,10 @@
 ---
-name: 'Achievement'
+title: 'Achievement'
 thumbnails: ['/images/thumbnails/achievement00.png', '/images/thumbnails/achievement01.png', '/images/thumbnails/achievement02.png']
 headerImage: '/images/headers/achievement.png'
 ---
+
+# Achievement
 
 ## 概要
 目標達成を支援するAndroidアプリ。  

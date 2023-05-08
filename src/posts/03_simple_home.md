@@ -1,8 +1,10 @@
 ---
-name: 'Simple Home'
+title: 'Simple Home'
 thumbnail: '/images/thumbnails/simple-home.png'
 headerImage: '/images/headers/simple-home.png'
 ---
+
+# Simple Home
 
 ## 概要
 以前作った[Simple House](https://github.com/Yu357/SimpleHouse)というWebサイトを、Reactで作り直したものです。
