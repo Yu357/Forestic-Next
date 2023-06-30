@@ -59,7 +59,7 @@ function WorkPage(props: Props) {
 		<>
 
 			<Head>
-				<title>Hello Next</title>
+				<title>{props.frontMatter.title} - Forestic</title>
 			</Head>
 
 			<main className="mx-auto w-full lg:width-lg px-4 lg:px-0">
